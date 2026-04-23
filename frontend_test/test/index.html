@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PinNews - Ontdek het laatste nieuws</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'pin-red': '#e60023',
+            'plum-black': '#211922',
+            'olive-gray': '#62625b',
+            'sand-gray': '#e5e5e0',
+            'warm-light': '#e0e0d9',
+            'warm-silver': '#91918c',
+            'fog': '#f6f6f3',
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+          borderRadius: {
+            'pin': '16px',
+            'pin-card': '20px',
+            'pin-hero': '40px',
+          },
+          letterSpacing: {
+            'pin-tight': '-1.2px',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-white text-plum-black font-sans antialiased">
+
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md pb-4 pt-4 px-6 flex items-center justify-between">
+    <div class="flex items-center gap-4 w-full">
+      <a href="index.html" class="flex items-center justify-center w-12 h-12 rounded-full bg-warm-light hover:bg-sand-gray transition-colors text-pin-red font-bold text-xl">P</a>
+      <a href="index.html" class="text-base font-semibold px-4 py-3 rounded-pin hover:bg-fog transition">Home</a>
+      <a href="nieuws.html" class="text-base font-semibold px-4 py-3 rounded-pin hover:bg-fog transition">Ontdekken</a>
+      
+      <div class="flex-grow hidden md:flex items-center bg-fog rounded-full px-4 py-3 border border-transparent hover:border-warm-silver transition-all">
+        <svg class="w-5 h-5 text-olive-gray mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+        <input type="text" placeholder="Zoek naar nieuws, design, tech..." class="bg-transparent border-none outline-none w-full text-plum-black placeholder-olive-gray text-base">
+      </div>
+    </div>
+    <div class="flex items-center gap-2 ml-4">
+      <button class="bg-pin-red text-white font-semibold text-[15px] px-4 py-3 rounded-pin hover:bg-red-700 transition w-max">Abonneren</button>
+    </div>
+  </header>
+
+  <main class="max-w-[1680px] mx-auto px-4 sm:px-6 pt-6 pb-12">
+    <div class="bg-fog rounded-pin-hero p-8 md:p-16 flex flex-col items-center text-center gsap-hero mb-12">
+      <span class="bg-[#e5e5e0] text-plum-black text-sm font-bold px-4 py-1 rounded-full mb-6">Uitgelicht</span>
+      <h1 class="text-4xl md:text-[70px] font-semibold leading-tight tracking-pin-tight mb-6 max-w-4xl text-plum-black">De toekomst van design in een AI-gedreven wereld.</h1>
+      <p class="text-olive-gray text-lg max-w-2xl mb-8">Ontdek hoe generatieve modellen niet alleen de code, maar ook de visuele ziel van onze digitale platforms transformeren.</p>
+      <a href="artikel.html" class="bg-pin-red text-white font-semibold text-base px-6 py-3 rounded-pin hover:bg-red-700 transition">Lees het volledige artikel</a>
+    </div>
+
+    <h2 class="text-[28px] font-bold tracking-pin-tight text-plum-black mb-6 px-2 gsap-hero">Trending Vandaag</h2>
+    
+    <div class="masonry-grid">
+      <div class="masonry-item gsap-card group cursor-pointer">
+        <a href="artikel.html">
+          <div class="relative rounded-pin-card overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop" alt="Abstract Art" class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+            <div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors"></div>
+          </div>
+          <div class="mt-2 px-1">
+            <h3 class="text-base font-semibold leading-snug">Waarom warme kleuren terug zijn in webdesign</h3>
+            <p class="text-xs text-olive-gray mt-1">Design • 2 min lezen</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="masonry-item gsap-card group cursor-pointer">
+        <a href="artikel.html">
+          <div class="relative rounded-pin-card overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1481481322814-3d5408cb3cd7?q=80&w=800&auto=format&fit=crop" alt="Tech" class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="mt-2 px-1">
+            <h3 class="text-base font-semibold leading-snug">De impact van minimalisme op user experience</h3>
+            <p class="text-xs text-olive-gray mt-1">Tech • 5 min lezen</p>
+          </div>
+        </a>
+      </div>
+      
+      <div class="masonry-item gsap-card group cursor-pointer">
+        <a href="artikel.html">
+          <div class="relative rounded-pin-card overflow-hidden border-[8px] border-white shadow-sm">
+            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=800&auto=format&fit=crop" alt="Lifestyle" class="w-full object-cover group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="mt-2 px-1">
+            <h3 class="text-base font-semibold leading-snug">Thuiswerken in 2026: De nieuwe standaard</h3>
+            <p class="text-xs text-olive-gray mt-1">Lifestyle • 4 min lezen</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/animaties.js"></script>
+</body>
+</html>

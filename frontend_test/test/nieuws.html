@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ontdekken - PinNews</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: { 'pin-red': '#e60023', 'plum-black': '#211922', 'olive-gray': '#62625b', 'sand-gray': '#e5e5e0', 'warm-light': '#e0e0d9', 'warm-silver': '#91918c', 'fog': '#f6f6f3' },
+        fontFamily: { sans: ['-apple-system', 'system-ui', 'Segoe UI', 'Roboto', 'Arial', 'sans-serif'] },
+        borderRadius: { 'pin': '16px', 'pin-card': '20px', 'pin-hero': '40px' },
+        letterSpacing: { 'pin-tight': '-1.2px' }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-white text-plum-black font-sans antialiased">
+
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md pb-4 pt-4 px-6 flex items-center justify-between">
+    <div class="flex items-center gap-4 w-full">
+      <a href="index.html" class="flex items-center justify-center w-12 h-12 rounded-full bg-warm-light hover:bg-sand-gray transition-colors text-pin-red font-bold text-xl">P</a>
+      <a href="index.html" class="text-base font-semibold px-4 py-3 rounded-pin hover:bg-fog transition">Home</a>
+      <a href="nieuws.html" class="text-base font-semibold px-4 py-3 rounded-pin bg-plum-black text-white transition">Ontdekken</a>
+    </div>
+  </header>
+
+  <main class="max-w-[1680px] mx-auto px-4 sm:px-6 pt-6 pb-12">
+    <div class="flex flex-wrap gap-3 mb-8 gsap-hero">
+      <button class="bg-plum-black text-white px-4 py-2 rounded-pin text-[15px] font-semibold">Voor jou</button>
+      <button class="bg-sand-gray text-plum-black px-4 py-2 rounded-pin text-[15px] font-semibold hover:bg-warm-silver transition">Technologie</button>
+      <button class="bg-sand-gray text-plum-black px-4 py-2 rounded-pin text-[15px] font-semibold hover:bg-warm-silver transition">Architectuur</button>
+      <button class="bg-sand-gray text-plum-black px-4 py-2 rounded-pin text-[15px] font-semibold hover:bg-warm-silver transition">Fotografie</button>
+    </div>
+
+    <div class="masonry-grid">
+      <div class="masonry-item gsap-card group cursor-pointer"><a href="artikel.html"><div class="rounded-pin-card overflow-hidden"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=600&auto=format&fit=crop" class="w-full"></div><div class="mt-2"><h3 class="font-semibold text-base">Interieur trends 2026</h3></div></a></div>
+      <div class="masonry-item gsap-card group cursor-pointer"><a href="artikel.html"><div class="rounded-pin-card overflow-hidden"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&auto=format&fit=crop" class="w-full"></div><div class="mt-2"><h3 class="font-semibold text-base">De evolutie van codering</h3></div></a></div>
+      <div class="masonry-item gsap-card group cursor-pointer"><a href="artikel.html"><div class="rounded-pin-card overflow-hidden border-[8px] border-fog"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&auto=format&fit=crop" class="w-full"></div><div class="mt-2"><h3 class="font-semibold text-base">Financiële markten in beeld</h3></div></a></div>
+      <div class="masonry-item gsap-card group cursor-pointer"><a href="artikel.html"><div class="rounded-pin-card overflow-hidden"><img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=600&auto=format&fit=crop" class="w-full"></div><div class="mt-2"><h3 class="font-semibold text-base">Macro economie simplistisch uitgelegd</h3></div></a></div>
+      <div class="masonry-item gsap-card group cursor-pointer"><a href="artikel.html"><div class="rounded-pin-card overflow-hidden"><img src="https://images.unsplash.com/photo-1478760329108-5c3ed9d495a0?w=600&auto=format&fit=crop" class="w-full"></div><div class="mt-2"><h3 class="font-semibold text-base">Donkere modus in design</h3></div></a></div>
+    </div>
+  </main>
+
+  <script src="js/animaties.js"></script>
+</body>
+</html>

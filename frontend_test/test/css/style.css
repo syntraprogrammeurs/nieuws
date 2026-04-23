@@ -1,0 +1,32 @@
+/* css/style.css */
+@layer utilities {
+  .masonry-grid {
+    column-count: 1;
+    column-gap: 16px;
+  }
+  
+  @media (min-width: 640px) { .masonry-grid { column-count: 2; } }
+  @media (min-width: 890px) { .masonry-grid { column-count: 3; } }
+  @media (min-width: 1312px) { .masonry-grid { column-count: 4; } }
+  @media (min-width: 1680px) { .masonry-grid { column-count: 5; } }
+
+  .masonry-item {
+    break-inside: avoid;
+    margin-bottom: 16px;
+  }
+}
+
+/* Custom Scrollbar voor een premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f6f6f3; 
+}
+::-webkit-scrollbar-thumb {
+  background: #c8c8c1; 
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #91918c; 
+}
