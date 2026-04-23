@@ -13,30 +13,35 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        $admin = \App\Models\User::factory()->create([
-            'name' => 'Test Admin',
-            'email' => 'admin@example.com',
-            'role' => 'admin',
-        ]);
+        $admin = \App\Models\User::updateOrCreate(
+            ['email' => 'admin@example.com'],
+            [
+                'name' => 'Test Admin',
+                'password' => \Illuminate\Support\Facades\Hash::make('password'),
+                'role' => 'admin',
+            ]
+        );
 
         $categories = [
             'Technologie', 'Architectuur', 'Fotografie', 'Design'
         ];
 
-        $categoryModels = [];
         foreach ($categories as $cat) {
-            $categoryModels[] = \App\Models\Category::create([
-                'name' => $cat,
-                'slug' => \Illuminate\Support\Str::slug($cat),
-                'description' => "Alles over $cat",
-            ]);
-        }
+            $category = \App\Models\Category::firstOrCreate(
+                ['slug' => \Illuminate\Support\Str::slug($cat)],
+                [
+                    'name' => $cat,
+                    'description' => "Alles over $cat",
+                ]
+            );
 
-        foreach ($categoryModels as $category) {
-            \App\Models\Article::factory(10)->create([
-                'category_id' => $category->id,
-                'author_id' => $admin->id,
-            ]);
+            // Only seed articles if the category was just created or if we want to add more
+            if ($category->articles()->count() === 0) {
+                \App\Models\Article::factory(10)->create([
+                    'category_id' => $category->id,
+                    'author_id' => $admin->id,
+                ]);
+            }
         }
     }
 }
