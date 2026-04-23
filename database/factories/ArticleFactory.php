@@ -19,16 +19,16 @@ class ArticleFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->sentence(),
-            'slug' => fake()->unique()->slug(),
-            'excerpt' => fake()->paragraph(),
-            'content' => fake()->paragraphs(3, true),
+            'title' => $this->faker->sentence(),
+            'slug' => $this->faker->unique()->slug(),
+            'excerpt' => $this->faker->paragraph(),
+            'content' => $this->faker->paragraphs(3, true),
             'image' => 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop',
             'category_id' => \App\Models\Category::factory(),
             'author_id' => \App\Models\User::factory(),
-            'status' => fake()->randomElement(ArticleStatus::cases()),
-            'published_at' => fake()->dateTimeBetween('-1 year', 'now'),
-            'views' => fake()->numberBetween(0, 1000),
+            'status' => $this->faker->randomElement(ArticleStatus::cases()),
+            'published_at' => $this->faker->dateTimeBetween('-1 year', 'now'),
+            'views' => $this->faker->numberBetween(0, 1000),
         ];
     }
 }
